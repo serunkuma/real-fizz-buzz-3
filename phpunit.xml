@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit colors="true" processIsolation="false" stopOnFailure="false" syntaxCheck="false">
+    <testsuites>
+        <testsuite name="RealFizzBuzz Tests">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
