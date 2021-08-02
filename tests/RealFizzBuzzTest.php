@@ -15,4 +15,14 @@ class RealFizzBuzzTest extends TestCase {
             "The output should match: '1 2 lucky 4 buzz fizz 7 8 fizz buzz 11 fizz lucky 14 fizzbuzz 16 17 fizz 19 buzz'"
         );
     }
+
+    public function testReport(){
+        RealFizzBuzz::step1(range(1,20));
+        $output = RealFizzBuzz::generateReport();
+        $this->assertEquals(
+            "fizz: 4\nbuzz: 3\nfizzbuzz: 1\nlucky: 2\ninteger: 10",
+            $output,
+            "The output should match: fizz: 4\nbuzz: 3\nfizzbuzz: 1\nlucky: 2\ninteger: 10"
+        );
+    }
 }

@@ -8,23 +8,24 @@ class RealFizzBuzz {
         $rangeSize = count($range);
         
         for($i = 0; $i < $rangeSize ; $i++ ) {
-            $last = $i === $rangeSize - 1;
+            $last = $i === $rangeSize - 1 ? '' : ' ';
+            $isLucky = (bool) preg_match("/3/", strval($range[$i]));
     
             switch ($range[$i]) {
                 case $range[$i] % 15 === 0:
-                    $output .= 'fizzbuzz' . ($last ? '' : ' ');
+                    $output .= $isLucky ? 'lucky' . $last : 'fizzbuzz' . $last;
                     break;
     
                 case $range[$i] % 5 === 0:
-                    $output .= 'buzz' . ($last ? '' : ' ');
+                    $output .= $isLucky ? 'lucky' . $last : 'buzz' . $last;
                     break;
     
                 case $range[$i] % 3 === 0:
-                    $output .= 'fizz' . ($last ? '' : ' ');
+                    $output .= $isLucky ? 'lucky' . $last : 'fizz' . $last;
                     break;
     
                 default:
-                    $output .= $range[$i] . ($last ? '' : ' ');
+                    $output .= $isLucky ? 'lucky' . $last : $range[$i] . $last;
                     break;
             }
         }
